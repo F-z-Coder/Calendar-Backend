@@ -1,6 +1,6 @@
 import mongoose, { Document, Schema, model } from "mongoose";
 
-interface Event extends Document {
+export interface EventType extends Document {
   title: string;
   description: string;
   participants: string[];
@@ -11,7 +11,7 @@ interface Event extends Document {
   user: mongoose.Types.ObjectId;
 }
 
-const EventSchema: Schema = new Schema({
+const eventSchema: Schema = new Schema({
   title: { type: String, required: true },
   description: { type: String, required: true },
   participants: { type: [String], required: true },
@@ -22,5 +22,5 @@ const EventSchema: Schema = new Schema({
   user: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
 });
 
-const Event = model<Event>("Event", EventSchema);
-export default Event;
+const eventModel = model<Event>("Event", eventSchema);
+export default eventModel;
