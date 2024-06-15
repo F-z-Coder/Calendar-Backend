@@ -12,9 +12,7 @@ const userSchema: Schema = new Schema({
   email: { type: String, required: true, unique: true },
   name: { type: String, required: true },
   picture: { type: String, required: true },
-  events: [
-    { type: mongoose.Schema.Types.ObjectId, ref: "EventType", default: [] },
-  ],
+  events: [{ type: mongoose.Schema.Types.ObjectId, ref: "Event", default: [] }],
 });
 
 const userModel = mongoose.model<User>("User", userSchema);
