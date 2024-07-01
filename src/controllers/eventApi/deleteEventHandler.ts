@@ -1,5 +1,4 @@
 import { RequestHandler } from "express";
-import deleteEvent from "@datacontrollers/eventData/deleteEvent.js";
 import { Schema } from "mongoose";
 
 type RequestParams = { id: Schema.Types.ObjectId };

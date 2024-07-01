@@ -1,5 +1,4 @@
 import { RequestHandler } from "express";
-import updateEvent from "@datacontrollers/eventData/updateEvent.js";
 import { Schema } from "mongoose";
 
 type RequestParams = { id: Schema.Types.ObjectId };
