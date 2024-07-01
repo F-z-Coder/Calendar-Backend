@@ -9,13 +9,13 @@ import eventRouter from "./routes/eventRoutes.js";
 import { AUTH_BASE_URL } from "@consts/authConst.js";
 import { USER_BASE_URL } from "@consts/userConst.js";
 import { EVENT_BASE_URL } from "./consts/eventConst.js";
-import { envConst } from "./consts/envConst.js";
+import { ENV_CONST } from "./consts/envConst.js";
 import errorHandlerMiddleware from "middlewares/errorHandlerMiddleware.js";
 const app = express();
 
 connectToDB();
 //cors policy
-app.use(cors({ origin: envConst.FRONTEND_HOST_URL, credentials: true }));
+app.use(cors({ origin: ENV_CONST.FRONTEND_HOST_URL, credentials: true }));
 
 //handle login session
 app.use(sessionMiddleware);
@@ -32,6 +32,6 @@ app.use(EVENT_BASE_URL, eventRouter);
 // Error handling middleware should be the last one
 app.use(errorHandlerMiddleware);
 
-app.listen(envConst.PORT, () => {
-  console.log("server started on port", envConst.PORT);
+app.listen(ENV_CONST.PORT, () => {
+  console.log("server started on port", ENV_CONST.PORT);
 });

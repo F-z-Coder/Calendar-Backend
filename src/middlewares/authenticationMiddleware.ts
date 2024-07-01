@@ -5,15 +5,15 @@ import {
   Profile,
 } from "passport-google-oauth20";
 import passport from "passport";
-import { envConst } from "@consts/envConst.js";
+import { ENV_CONST } from "@consts/envConst.js";
 import { UserDataInSession } from "types/express/index.js";
 import getUserByEmail from "@datacontrollers/userData/getUserByEmail.js";
 import createUser from "@datacontrollers/userData/createUser.js";
 import { AUTH_GOOGLE_REDIRECT_URL } from "@consts/authConst.js";
 
 const strategyOptions: StrategyOptions = {
-  clientID: envConst.GOOGLE_CLIENT_ID,
-  clientSecret: envConst.GOOGLE_CLIENT_SECRET,
+  clientID: ENV_CONST.GOOGLE_CLIENT_ID,
+  clientSecret: ENV_CONST.GOOGLE_CLIENT_SECRET,
   scope: ["email", "profile"],
   callbackURL: AUTH_GOOGLE_REDIRECT_URL,
 };

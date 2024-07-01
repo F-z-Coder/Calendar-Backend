@@ -1,8 +1,8 @@
-import { envConst } from "@consts/envConst.js";
+import { ENV_CONST } from "@consts/envConst.js";
 import session, { SessionOptions } from "express-session";
 
 const sessionOptions: SessionOptions = {
-  secret: envConst.COOKIE_SECRET,
+  secret: ENV_CONST.COOKIE_SECRET,
   saveUninitialized: false,
   resave: false,
   cookie: {

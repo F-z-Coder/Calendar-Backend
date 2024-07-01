@@ -1,6 +1,6 @@
 import { Router } from "express";
 import passport from "passport";
-import { envConst } from "@consts/envConst.js";
+import { ENV_CONST } from "@consts/envConst.js";
 import {
   AUTH_GOOGLE_LOGIN_ENDPOINT,
   AUTH_GOOGLE_REDIRECT_ENDPOINT,
@@ -12,7 +12,7 @@ authRouter.get(AUTH_GOOGLE_LOGIN_ENDPOINT, passport.authenticate("google"));
 authRouter.get(
   AUTH_GOOGLE_REDIRECT_ENDPOINT,
   passport.authenticate("google", {
-    successRedirect: envConst.FRONTEND_HOST_URL,
+    successRedirect: ENV_CONST.FRONTEND_HOST_URL,
   })
 );
 //TODO
